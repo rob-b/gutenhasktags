@@ -41,4 +41,6 @@ main = do
         (fullDesc <> progDesc "Wrapper around hasktags to swallow extra args" <>
          header "Hasktags wrapper")
     buildArgList :: Command -> [String]
-    buildArgList cmd = ["-c", "-f", fromMaybe "tags" (file cmd), filepath cmd]
+    buildArgList cmd = filter (not .null) ["-c", "-f", fromMaybe "tags" (file cmd), shouldAppend cmd, filepath cmd]
+
+    shouldAppend cmd = if append cmd then "--append" else ""
