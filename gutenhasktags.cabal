@@ -20,7 +20,6 @@ executable gutenhasktags
   hs-source-dirs:      app
   main-is:             Main.hs
   build-depends:       base
-                     , gutenhasktags
                      , optparse-applicative
                      , process
 
@@ -31,7 +30,6 @@ test-suite spec
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
-                     , gutenhasktags
                      , hspec
                      , QuickCheck
 
