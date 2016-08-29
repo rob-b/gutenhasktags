@@ -1,5 +1,7 @@
 # gutenhasktags
 
+[![Build Status](https://travis-ci.org/rob-b/gutenhasktags.png)](https://travis-ci.org/githubuser/gutenhasktags)
+
 Simple wrapper around [hasktags](https://hackage.haskell.org/package/hasktags) to allow it to work with [vim-gutentags](https://github.com/ludovicchabant/vim-gutentags)
 
 ## Usage

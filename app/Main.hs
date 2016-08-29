@@ -6,6 +6,7 @@ import System.Process (readProcessWithExitCode)
 import System.Exit (exitWith, ExitCode(ExitFailure), ExitCode(ExitSuccess))
 import Options.Applicative
 import Data.Maybe (fromMaybe)
+import Data.String (IsString)
 
 data Command = Command {
                          file     :: Maybe String
@@ -43,4 +44,5 @@ main = do
     buildArgList :: Command -> [String]
     buildArgList cmd = filter (not .null) ["-c", "-f", fromMaybe "tags" (file cmd), shouldAppend cmd, filepath cmd]
 
+    shouldAppend :: IsString a => Command -> a
     shouldAppend cmd = if append cmd then "--append" else ""
