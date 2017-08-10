@@ -7,6 +7,7 @@ import System.Exit (exitWith, ExitCode(ExitFailure), ExitCode(ExitSuccess))
 import Options.Applicative
 import Data.Maybe (fromMaybe)
 import Data.String (IsString)
+import Data.Monoid
 
 data Command = Command {
                          file     :: Maybe String
